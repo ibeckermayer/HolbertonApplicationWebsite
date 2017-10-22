@@ -40,25 +40,122 @@
         </div>
         <div class="chunk">
           <h2> Enchanted Valley </h2>
-          <img src="/support/Images/EnchantedValley/1.jpg" alt="image not available"/>
-          <img src="/support/Images/EnchantedValley/2.jpg" alt="image not available"/>
-          <img src="/support/Images/EnchantedValley/3.jpg" alt="image not available"/>
-          <img src="/support/Images/EnchantedValley/4.jpg" alt="image not available"/>
+          <div class="slideshow-container">
+            <div class="mySlides1 fadein">
+              <img src="/support/Images/EnchantedValley/1.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">DEFINITELY ENCHANTED!</div>
+            </div>
+            <div class="mySlides1 fadein">
+              <img src="/support/Images/EnchantedValley/4.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">DEFINITELY A VALLEY!</div>
+            </div>
+            <div class="mySlides1 fadein">
+              <img src="/support/Images/EnchantedValley/2.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">DEFINITELY SAW A F*CKING BEAR!</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, slideIndex1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, slideIndex1)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot1" onclick="currentSlide(1, slideIndex1)"></span> 
+            <span class="dot1" onclick="currentSlide(2, slideIndex1)"></span> 
+            <span class="dot1" onclick="currentSlide(3, slideIndex1)"></span> 
+          </div>
         </div>
         <div class="chunk">
           <h2> Sand Island </h2>
-          <img src="/support/Images/SandIsland/1.jpg" alt="image not available"/>
-          <img src="/support/Images/SandIsland/2.jpg" alt="image not available"/>
-          <img src="/support/Images/SandIsland/3.jpg" alt="image not available"/>
-          <img src="/support/Images/SandIsland/4.jpg" alt="image not available"/>
+          <div class="slideshow-container">
+            <div class="mySlides2 fadein">
+              <img src="/support/Images/SandIsland/1.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">Sand Island used to be called Tree Island until somebody came and accidentally burned down all the trees.</div>
+            </div>
+            <div class="mySlides2 fadein">
+              <img src="/support/Images/SandIsland/3.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">You better believe I made them use this as a matching cover photo.</div>
+            </div>
+            <div class="mySlides2 fadein">
+              <img src="/support/Images/SandIsland/4.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">Fine, technically this trip was kayaking but close enough.</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, slideIndex2)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, slideIndex2)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot2" onclick="currentSlide(1, slideIndex2)"></span> 
+            <span class="dot2" onclick="currentSlide(2, slideIndex2)"></span> 
+            <span class="dot2" onclick="currentSlide(3, slideIndex2)"></span> 
+          </div>
         </div>
         <div class="chunk">
           <h2> Beaujolais Trek </h2>
-          <img src="/support/Images/Beaujoulous/1.jpg" alt="image not available"/>
-          <img src="/support/Images/Beaujoulous/2.jpg" alt="image not available"/>
-          <img src="/support/Images/Beaujoulous/3.jpg" alt="image not available"/>
-          <img src="/support/Images/Beaujoulous/4.jpg" alt="image not available"/>
+          <div class="slideshow-container">
+            <div class="mySlides3 fadein">
+              <img src="/support/Images/Beaujoulous/2.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">Days one and two of this trip were long, difficult, rainy, and gray.</div>
+            </div>
+            <div class="mySlides3 fadein">
+              <img src="/support/Images/Beaujoulous/3.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">But day three was UNBELIEVABLE.</div>
+            </div>
+            <div class="mySlides3 fadein">
+              <img src="/support/Images/Beaujoulous/4.jpg" style="width:100%" alt="image not available"/>
+              <div class="caption">Mystery peak in all its glory. Truly an unforgettable adventure.</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, slideIndex3)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, slideIndex3)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot3" onclick="currentSlide(1, slideIndex3)"></span> 
+            <span class="dot3" onclick="currentSlide(2, slideIndex3)"></span> 
+            <span class="dot3" onclick="currentSlide(3, slideIndex3)"></span> 
+          </div>
         </div>
+        <script>
+          var slideIndex1 = {value: 1, index: 1};
+          var slideIndex2 = {value: 1, index: 2};
+          var slideIndex3 = {value: 1, index: 3};
+          showSlides(slideIndex1.value, slideIndex1);
+          showSlides(slideIndex2.value, slideIndex2);
+          showSlides(slideIndex3.value, slideIndex3);
+
+          function plusSlides(n, si) {
+            showSlides(si.value += n, si);
+          }
+
+          function currentSlide(n, si) {
+            showSlides(si.value = n, si);
+          }
+
+          function showSlides(n, si) {
+            var i;
+            switch (si.index) {
+              case 1:
+                var slides = document.getElementsByClassName("mySlides1");
+                var dots = document.getElementsByClassName("dot1");
+                break;
+              case 2:
+                var slides = document.getElementsByClassName("mySlides2");
+                var dots = document.getElementsByClassName("dot2");
+                break;
+              case 3:
+                var slides = document.getElementsByClassName("mySlides3");
+                var dots = document.getElementsByClassName("dot3");
+            }
+            if (n > slides.length) {si.value = 1}    
+            if (n < 1) {si.value = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[si.value-1].style.display = "block";  
+            dots[si.value-1].className += " active";
+          }
+        </script>
       </article>
   		<aside class="scroller">
         <div id="disqus_thread"></div>
